@@ -45,7 +45,7 @@ func main() {
 	log.Printf("listening on port %d", port)
 	log.Printf("serving id %s", s.id)
 
-	http.HandleFunc("/", s.defaultHandler)
+	http.HandleFunc("/id", s.defaultHandler)
 
 	addr := fmt.Sprintf(":%d", port)
 	log.Fatal(http.ListenAndServe(addr, nil))
