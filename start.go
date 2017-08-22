@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"time"
 )
 
 type server struct {
@@ -39,6 +40,7 @@ func main() {
 		port = defaultPort
 	}
 	if s.id == "" {
+		rand.Seed(time.Now().UTC().UnixNano())
 		s.id = randStringBytes(12)
 	}
 
